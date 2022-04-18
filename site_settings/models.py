@@ -51,26 +51,5 @@ class SiteSetting(SingletonBaseModel):
         help_text=_('این توضیحات در بخش پاورقی وبسایت نمایش داده خواهند شد.'),
     )
 
-    kavenegar_api_key = models.CharField(
-        max_length=150,
-        verbose_name=_('کد API key کاوه نگار'),
-        null=True,
-        blank=True,
-    )
-
-    kavenegar_sender = models.CharField(
-        max_length=150,
-        verbose_name=_('شماره اسال کننده پیامک کاوه نگار'),
-        null=True,
-        blank=True,
-    )
-
-    kavenegar_message = models.TextField(
-        null=True,
-        blank=True,
-        verbose_name=_('متن پیامک کاوه نگار'),
-        help_text=_('هر متنی که وار کنید به همراه عبارت ؛کد تایید: xxxx به کاربر پیامک خواهد شد.')
-    )
-
     def __str__(self):
         return self.site_name
