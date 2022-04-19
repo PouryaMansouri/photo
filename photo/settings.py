@@ -15,13 +15,13 @@ from pathlib import Path
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "Salon Admin",
+    "site_title": "پنل ادمین",
 
     # Title on the brand, and login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "Salon",
+    "site_header": "مبلمان",
 
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to Salon admin panel! :)",
+    "welcome_sign": "به پنل ادمین خوش آمدید!",
 
     # Copyright on the footer
     "copyright": "KiarashFz",
@@ -66,23 +66,23 @@ JAZZMIN_SETTINGS = {
 
     # for the full list of 5.13.0 free icon classes
     "icons": {
-        "auth": "fas fa-users-cog",
-        "user.User": "fas fa-user",
-        "user.Mentor": "fas fa-chalkboard-teacher",
-        "user.Candidate": "fas fa-user-tie",
-        "voice.Voice": "fas fa-music",
-        "team.Team": "fas fa-users",
-        "score.ScoreItem": "fas fa-star-half-alt",
-        "auth.Group": "fas fa-users-cog",
-        "reserve.Agent": "fas fa-solid fa-address-card",
-        "reserve.Service": "fas fa-brands fa-stripe",
-        # "reserve.Holiday": "fas fa-regular fa-calendar-xmark",
-        "reserve.WorkTime": "fas fa-solid fa-clock",
-        "reserve.AgentWorkday": "fas fa-solid fa-business-time",
-        # "reserve.Workday": "fas fa-solid fa-calendar-days",
-        "reserve.Customer": "fas fa-solid fa-user",
-        "reserve.Booking": "fas fa-solid fa-hourglass",
-        # "reserve.AgentService": "fas fa-solid fa-hand-dots",
+        # "auth": "fas fa-users-cog",
+        # "user.User": "fas fa-user",
+        # "user.Mentor": "fas fa-chalkboard-teacher",
+        # "user.Candidate": "fas fa-user-tie",
+        # "voice.Voice": "fas fa-music",
+        # "team.Team": "fas fa-users",
+        # "score.ScoreItem": "fas fa-star-half-alt",
+        # "auth.Group": "fas fa-users-cog",
+        # "reserve.Agent": "fas fa-solid fa-address-card",
+        # "reserve.Service": "fas fa-brands fa-stripe",
+        # # "reserve.Holiday": "fas fa-regular fa-calendar-xmark",
+        # "reserve.WorkTime": "fas fa-solid fa-clock",
+        # "reserve.AgentWorkday": "fas fa-solid fa-business-time",
+        # # "reserve.Workday": "fas fa-solid fa-calendar-days",
+        # "reserve.Customer": "fas fa-solid fa-user",
+        # "reserve.Booking": "fas fa-solid fa-hourglass",
+        # # "reserve.AgentService": "fas fa-solid fa-hand-dots",
     },
     # Icons that are used when one is not manually specified
     "default_icon_parents": "fas fa-chevron-circle-right",
@@ -90,7 +90,7 @@ JAZZMIN_SETTINGS = {
 
     "related_modal_active": False,
 
-    "show_ui_builder": True,
+    "show_ui_builder": False,
 
     "changeform_format": "horizontal_tabs",
     "changeform_format_overrides": {"user.User": "collapsible"},
@@ -154,6 +154,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rosetta',
     'core',
     'site_settings',
 ]
@@ -223,9 +224,16 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fa'
 
-TIME_ZONE = 'UTC'
+LANGUAGES = (
+    ('en', 'english'),
+    ('fa', 'Farsi'),
+)
+
+LOCALE_PATHS = (BASE_DIR / 'locale',)
+
+TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
 
