@@ -14,8 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+from site_settings.models import SiteSetting
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('rosetta/', include('rosetta.urls')),
 ]
+
+site_setting = SiteSetting.load()
+
+admin.site.site_header = f'پنل ادمین {site_setting.site_name}'
+admin.site.site_title = f'{site_setting.site_name}'
+admin.site.index_title = f'پنل ادمین {site_setting.site_name}'
